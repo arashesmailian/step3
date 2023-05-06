@@ -1,0 +1,85 @@
+:root {
+  /* primary colors */
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  /* Light Theme */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue-light-theme: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue-light-theme: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue-light-theme: hsl(235, 19%, 35%);
+  /* Dark Theme */
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue-1: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
+}
+
+.App{
+  min-height: 120vh;
+}
+
+.App[theme = 'dark']{
+  background-color: var(--Very-Dark-Blue);
+}
+.App[theme = 'light']{
+  background-color: var(--Very-Light-Gray);
+}
+
+.App[theme = 'dark'] header{
+  background-image: url("./assets/images/bg-desktop-dark.jpg");
+}
+.App[theme = 'light'] header{
+  background-image: url("./assets/images/bg-desktop-light.jpg");
+}
+header{
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.title{
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 15px;
+  line-height: 40px;
+}
+.container img{
+  cursor: pointer;
+  height: 26px;
+}
+
+.todos-container{
+  color: white;
+  max-width: 700px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,10%);
+}
+
+
+/* ***************** media query ***************** */
+@media screen and (max-width : 700px) {
+  .title{
+    font-size: 2rem;
+  }
+}
