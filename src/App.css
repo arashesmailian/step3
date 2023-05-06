@@ -19,7 +19,7 @@
 }
 
 .App{
-  min-height: 120vh;
+  min-height: 110vh;
 }
 
 .App[theme = 'dark']{
@@ -38,11 +38,11 @@
 header{
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 300px;
+  width: 100%;
   position: relative;
 }
 
@@ -59,7 +59,6 @@ header{
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 15px;
-  line-height: 40px;
 }
 .container img{
   cursor: pointer;
@@ -70,12 +69,85 @@ header{
   color: white;
   max-width: 700px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,10%);
+  transform: translate(-50%, 10%);
 }
 
+.todo-input{
+  max-width: 700px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.todo-input input{
+  width: 100%;
+  border: none;
+  font-size: 1.2rem;
+  background-color: inherit;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.todo-input input:focus{
+  outline: none;
+}
+
+.todo-mark{
+  border: 2px solid var(--Dark-Grayish-Blue);
+  display: block;
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.todo-list{
+  border: none;
+  border-radius: 5px;
+}
+
+.App[theme = 'light'] .todo-list{
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.App[theme = 'dark'] .todo-item{
+  background-color: var(--Very-Dark-Blue);
+  color: var(--Light-Grayish-Blue);
+}
+.App[theme = 'light'] .todo-item{
+  background-color: var(--Very-Light-Gray);
+  color: var(--Very-Dark-Blue);
+}
+.todo-item{
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid var(--Dark-Grayish-Blue);
+  box-shadow: ;
+}
+.todo-item::marker{
+  content: "";
+}
+
+.todo-item::before{
+  content: "";
+  display: block;
+  border: 2px solid var(--Dark-Grayish-Blue);
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
+}
 
 /* ***************** media query ***************** */
 @media screen and (max-width : 700px) {
