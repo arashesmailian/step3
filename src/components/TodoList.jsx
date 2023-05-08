@@ -66,24 +66,22 @@ const TodoList = () => {
             })
           : ""}
       </ul>
-      <div>
-        <li className="footer">
-          <p>
-            {todos.filter((todo) => todo.completed == false).length} items left
+      <div className="footer">
+        <p>
+          {todos.filter((todo) => todo.completed == false).length} items left
+        </p>
+        <div className="footer-conditions" ref={conditionList}>
+          <p status="true" onClick={(e) => conditionsClickHandler(e)}>
+            All
           </p>
-          <div className="footer-conditions" ref={conditionList}>
-            <p status="true" onClick={(e) => conditionsClickHandler(e)}>
-              All
-            </p>
-            <p status="false" onClick={(e) => conditionsClickHandler(e)}>
-              Active
-            </p>
-            <p status="false" onClick={(e) => conditionsClickHandler(e)}>
-              Completed
-            </p>
-          </div>
-          <p onClick={() => setCondition("Active")}>Clear completed</p>
-        </li>
+          <p status="false" onClick={(e) => conditionsClickHandler(e)}>
+            Active
+          </p>
+          <p status="false" onClick={(e) => conditionsClickHandler(e)}>
+            Completed
+          </p>
+        </div>
+        <p onClick={() => setCondition("Active")}>Clear completed</p>
       </div>
     </div>
   );

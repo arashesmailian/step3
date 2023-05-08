@@ -174,7 +174,7 @@ header{
   border-color: white;
 }
 .App[theme = 'dark'] .todo-item[completed='true']::before{
-  border-color: var(--Very-Dark-Blue);
+  border-color: var(--Very-Dark-Desaturated-Blue);
 }
 
 .App .todo-item[completed='true']{
@@ -226,5 +226,27 @@ header{
 @media screen and (max-width : 700px) {
   .title{
     font-size: 2rem;
+  }
+  header{
+    height: 200px;
+  }
+  .App[theme="dark"] header {
+    background-image: url("./assets/images/bg-mobile-dark.jpg");
+  }
+  .App[theme="light"] header {
+    background-image: url("./assets/images/bg-mobile-light.jpg");
+  }
+  .container{
+    margin: 0 1rem 6rem 1rem;
+  }
+  .container img{
+    height: 30px;
+  }
+  .todos-container{
+    bottom: 20%;
+    padding: 0 1rem;
+  }
+  .delete-icon-container{
+    display: flex;
   }
 }
