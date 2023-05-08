@@ -48,8 +48,13 @@ export const TodoSlice = createSlice({
       );
       state.splice(indexOfRemovingTodo, 1);
     },
+    completeTodo: (state, action) => {
+      state.forEach((todo) => {
+        if (todo.id === action.payload.id) todo.completed = !todo.completed;
+      });
+    },
   },
 });
 
-export const { addTodo, removeTodo } = TodoSlice.actions;
+export const { addTodo, removeTodo, completeTodo } = TodoSlice.actions;
 export default TodoSlice.reducer;

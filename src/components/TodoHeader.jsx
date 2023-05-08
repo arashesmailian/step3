@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import TodosContainer from "./TodosContainer";
 import sun from "../assets/images/icon-sun.svg";
 import moon from "../assets/images/icon-moon.svg";

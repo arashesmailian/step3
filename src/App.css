@@ -132,21 +132,85 @@ header{
   padding: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: start;
   gap: 1rem;
   border-bottom: 2px solid var(--Dark-Grayish-Blue);
-  box-shadow: ;
+  cursor: pointer;
+}
+.todo-item>p{
+  margin-right: auto;
 }
 .todo-item::marker{
   content: "";
 }
 
 .todo-item::before{
-  content: "";
+  /* content: ""; */
   display: block;
   border: 2px solid var(--Dark-Grayish-Blue);
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
+}
+.todo-item[completed='false']::before{
+  content: "";
+}
+.todo-item[completed='true']::before{
+  content: url("/src/assets/images/icon-check.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--Check-Background);
+  border-color: white;
+}
+.App[theme = 'dark'] .todo-item[completed='true']::before{
+  border-color: var(--Very-Dark-Blue);
+}
+
+.App .todo-item[completed='true']{
+  text-decoration: line-through;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.delete-icon-container{
+  padding: 10px;
+  display: none;
+  cursor:url("/src/assets/images/icon-trash.svg") ,auto;
+}
+
+.todo-item:hover .delete-icon-container{
+  display: flex;
+}
+
+.footer{
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 2px solid var(--Dark-Grayish-Blue);
+  color: var(--Dark-Grayish-Blue);
+}
+.footer p{
+  cursor: pointer;
+}
+
+.footer-conditions{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.footer-conditions p{
+  font-weight: 700;
+}
+.footer-conditions>p[status='true']{
+  color: var(--Bright-Blue);
+}
+.footer-conditions p:hover{
+  color: var(--Very-Dark-Blue);
+}
+.App[theme = 'dark'] .footer-conditions p:hover{
+  color: var(--Light-Grayish-Blue-hover);
 }
 
 /* ***************** media query ***************** */

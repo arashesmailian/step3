@@ -4,15 +4,11 @@ import { useState } from "react";
 
 const TodoInput = () => {
   const dispatch = useDispatch();
-  const [newTodo, setNewTodo] = useState();
-  //   const inputChangeHandler = (e) => {
-  //     console.log(e.target.value);
-  //     setNewTodo(e.target.value);
-  //   };
+  const [newTodo, setNewTodo] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(newTodo);
     if (newTodo) dispatch(addTodo(newTodo));
+    setNewTodo("");
   };
   return (
     <form className="todo-input" onSubmit={submitHandler}>
@@ -21,9 +17,9 @@ const TodoInput = () => {
         type="text"
         placeholder="Create a new todo"
         onChange={(e) => {
-          console.log(e.target.value);
           setNewTodo(e.target.value);
         }}
+        value={newTodo}
       />
     </form>
   );

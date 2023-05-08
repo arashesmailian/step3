@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useState } from "react";
 import "./App.css";
 import TodoHeader from "./components/TodoHeader";
