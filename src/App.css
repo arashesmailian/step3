@@ -147,6 +147,9 @@ header{
   font-size: 1.2rem;
   cursor: pointer;
 }
+.todo-item:focus{
+  cursor: grab;
+}
 .todo-item>p{
   margin-right: auto;
 }
@@ -193,11 +196,10 @@ header{
 }
 
 .footer{
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
   color: var(--Dark-Grayish-Blue);
 }
 .footer p{
@@ -218,8 +220,19 @@ header{
 .footer-conditions p:hover{
   color: var(--Very-Dark-Blue);
 }
-.App[theme = 'dark'] .footer-conditions p:hover{
+.App[theme = 'dark'] .footer .footer-conditions p:hover{
   color: var(--Light-Grayish-Blue-hover);
+}
+
+.drag-and-drop-description{
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  bottom: -160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Dark-Grayish-Blue);
 }
 
 /* ***************** media query ***************** */
@@ -248,5 +261,22 @@ header{
   }
   .delete-icon-container{
     display: flex;
+  }
+  .footer-conditions{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -70px;
+    padding: 1rem;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    border-radius: 5px;
+    box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  .App[theme = 'light'] .footer-conditions{
+    background-color: white;
   }
 }

@@ -1,19 +1,19 @@
 /* eslint-disable react/no-unknown-property */
-import { useState } from "react";
-import "./App.css";
-import TodoHeader from "./components/TodoHeader";
+import './App.css'
+import TodoHeader from './components/TodoHeader'
+import {useSelector} from 'react-redux'
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  document.querySelector("html").style.backgroundColor =
-    theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 21%, 11%)";
+  const theme = useSelector((state) => state.todo.themeColor)
+  document.querySelector('html').style.backgroundColor =
+    theme === 'light' ? 'hsl(0, 0%, 98%)' : 'hsl(235, 21%, 11%)'
   return (
     <>
-      <div className="App" theme={theme}>
-        <TodoHeader theme={theme} setTheme={setTheme} />
+      <div className='App' theme={theme}>
+        <TodoHeader />
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
