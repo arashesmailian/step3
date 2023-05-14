@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import {useDispatch} from 'react-redux'
-import {addTodo} from '../redux/reducers/todo.reducer'
+import {addTodo} from '../../redux/reducers/todo.reducer'
 import {useState} from 'react'
-import store from '../redux/store'
+import store from '../../redux/store'
 import styles from './todo_input.module.css'
 
 const TodoInput = () => {

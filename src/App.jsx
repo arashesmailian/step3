@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-// import './App.css'
-import TodoHeader from './components/TodoHeader'
+import TodoHeader from './components/TodoHeader/TodoHeader'
 import {useSelector} from 'react-redux'
 import styles from './app.module.css'
 

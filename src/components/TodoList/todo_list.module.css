@@ -1,4 +1,4 @@
-@value App from "../app.module.css";
+@value App from "../../app.module.css";
 
 :global(.App[theme='light']) .todo_list{
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
@@ -60,7 +60,7 @@
     content: "";
 }
 .todo_item[completed='true']::before{
-    content: url("../assets/images/icon-check.svg");
+    content: url("../../assets/images/icon-check.svg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +70,7 @@
 .delete_icon_container{
     padding: 10px;
     display: none;
-    cursor:url("/src/assets/images/icon-trash.svg") ,auto; 
+    cursor:url("../../assets/images/icon-trash.svg") ,auto; 
 }
 .todo_item:hover .delete_icon_container{
     display: flex;

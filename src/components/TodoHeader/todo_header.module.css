@@ -1,11 +1,11 @@
-@value App from "../app.module.css";
+@value App from "../../app.module.css";
 
 :global(.App[theme='light']) header{
-    background-image: url("../assets/images/bg-desktop-light.jpg");
+    background-image: url("../../assets/images/bg-desktop-light.jpg");
 }
 
 :global(.App[theme='dark']) header{
-    background-image: url("../assets/images/bg-desktop-dark.jpg");
+    background-image: url("../../assets/images/bg-desktop-dark.jpg");
 }
 header{
     background-repeat: no-repeat;
@@ -45,11 +45,11 @@ header{
         height: 200px;
     }
     :global(.App[theme='light']) header{
-        background-image: url("../assets/images/bg-mobile-light.jpg");
+        background-image: url("../../assets/images/bg-mobile-light.jpg");
     }
     
     :global(.App[theme='dark']) header{
-        background-image: url("../assets/images/bg-mobile-dark.jpg");
+        background-image: url("../../assets/images/bg-mobile-dark.jpg");
     }
     .container{
         margin: 0 1rem 6rem 1rem;

@@ -6,8 +6,8 @@ import {
   removeTodo,
   completeTodo,
   dragAndDropRefreshState,
-} from '../redux/reducers/todo.reducer'
-import DeleteIcon from '../assets/images/icon-cross.svg'
+} from '../../redux/reducers/todo.reducer'
+import DeleteIcon from '../../assets/images/icon-cross.svg'
 import {useRef, useState, useEffect} from 'react'
 import styles from './todo_list.module.css'
 

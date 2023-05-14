@@ -1,4 +1,4 @@
-@value App from "../app.module.css";
+@value App from "../../app.module.css";
 
 :global(.App[theme='light']) .todo_input{
     background-color: var(--Very-Light-Gray);

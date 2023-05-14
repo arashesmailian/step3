@@ -1,4 +1,4 @@
-@value App from "../app.module.css";
+@value App from "../../app.module.css";
 
 .todos_container{
   max-width: 700px;
