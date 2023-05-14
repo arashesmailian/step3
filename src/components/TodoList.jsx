@@ -7,9 +7,9 @@ import {
   completeTodo,
   dragAndDropRefreshState,
 } from '../redux/reducers/todo.reducer'
-
 import DeleteIcon from '../assets/images/icon-cross.svg'
 import {useRef, useState, useEffect} from 'react'
+import styles from './todo_list.module.css'
 
 const TodoList = () => {
   const dispatch = useDispatch()
@@ -64,7 +64,7 @@ const TodoList = () => {
   }, [todos, condition])
 
   return (
-    <div className='todo-list'>
+    <div className={styles.todo_list}>
       <ul>
         {filterTodos
           ? filterTodos.map((todo, index) => {
@@ -76,14 +76,17 @@ const TodoList = () => {
                   onDragEnter={(e) => dragEnter(e, index)}
                   onDragEnd={dropDraggedItem}
                 >
-                  <li className='todo-item' completed={String(todo.completed)}>
+                  <li
+                    className={styles.todo_item}
+                    completed={String(todo.completed)}
+                  >
                     <p onClick={() => checkTriggerHandler(todo)}>{todo.txt}</p>
                     <div
-                      className='delete-icon-container'
+                      className={styles.delete_icon_container}
                       onClick={() => deleteTaskHandler(todo)}
                     >
                       <img
-                        className='delete-icon'
+                        className={styles.delete_icon}
                         src={DeleteIcon}
                         alt='delete icon'
                       />
@@ -94,11 +97,11 @@ const TodoList = () => {
             })
           : ''}
       </ul>
-      <div className='footer'>
+      <div className={styles.footer}>
         <p>
           {todos.filter((todo) => todo.completed == false).length} items left
         </p>
-        <div className='footer-conditions' ref={conditionList}>
+        <div className={styles.footer_conditions} ref={conditionList}>
           <p status='true' onClick={(e) => conditionsClickHandler(e)}>
             All
           </p>
@@ -111,7 +114,7 @@ const TodoList = () => {
         </div>
         <p onClick={() => setCondition('Active')}>Clear completed</p>
       </div>
-      <div className='drag-and-drop-description'>
+      <div className={styles.drag_and_drop_description}>
         Drag and drop to reorder list
       </div>
     </div>

@@ -1,0 +1,38 @@
+@value App from "../app.module.css";
+
+:global(.App[theme='light']) .todo_input{
+    background-color: var(--Very-Light-Gray);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+:global(.App[theme='light']) .todo_input input{
+    color: black;
+} 
+.todo_input{
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    padding: 1.5rem;
+    border-radius: 7px;
+}
+.todo_input input{
+    width: 100%;
+    border: none;
+    font-size: 1.2rem;
+    background-color: inherit;
+    color: white;
+    display: flex;
+    align-items: center;
+    outline: none;
+}
+.todo_mark{
+    border: 2px solid var(--Dark-Grayish-Blue);
+    display: block;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+}

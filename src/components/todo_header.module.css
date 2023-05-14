@@ -1,0 +1,61 @@
+@value App from "../app.module.css";
+
+:global(.App[theme='light']) header{
+    background-image: url("../assets/images/bg-desktop-light.jpg");
+}
+
+:global(.App[theme='dark']) header{
+    background-image: url("../assets/images/bg-desktop-dark.jpg");
+}
+header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.container img{
+    cursor: pointer;
+    height: 26px;
+}
+.title{
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 15px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .title{
+        font-size: 2rem;
+    }
+    header{
+        height: 200px;
+    }
+    :global(.App[theme='light']) header{
+        background-image: url("../assets/images/bg-mobile-light.jpg");
+    }
+    
+    :global(.App[theme='dark']) header{
+        background-image: url("../assets/images/bg-mobile-dark.jpg");
+    }
+    .container{
+        margin: 0 1rem 6rem 1rem;
+    }
+    .container img{
+        height: 30px;
+    }
+    
+}

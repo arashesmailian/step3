@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import {addTodo} from '../redux/reducers/todo.reducer'
 import {useState} from 'react'
 import store from '../redux/store'
+import styles from './todo_input.module.css'
 
 const TodoInput = () => {
   const dispatch = useDispatch()
@@ -20,8 +21,8 @@ const TodoInput = () => {
     setNewTodo('')
   }
   return (
-    <form className='todo-input' onSubmit={submitHandler}>
-      <div className='todo-mark'></div>
+    <form className={styles.todo_input} onSubmit={submitHandler}>
+      <div className={styles.todo_mark}></div>
       <input
         type='text'
         placeholder='Create a new todo'
