@@ -9,8 +9,7 @@ import {
 } from '../redux/reducers/todo.reducer'
 
 import DeleteIcon from '../assets/images/icon-cross.svg'
-import {useRef, useState} from 'react'
-import {useEffect} from 'react'
+import {useRef, useState, useEffect} from 'react'
 
 const TodoList = () => {
   const dispatch = useDispatch()

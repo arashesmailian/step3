@@ -1,6 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit'
 import todoReducer from './reducers/todo.reducer'
 import {combineReducers} from '@reduxjs/toolkit'
+import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2'
 import storage from 'redux-persist/lib/storage'
 import {
   FLUSH,
@@ -15,6 +16,7 @@ import {
 const persistConfig = {
   key: 'root',
   storage: storage,
+  stateReconciler: autoMergeLevel2,
 }
 
 export const rootReducers = combineReducers({
