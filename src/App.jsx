@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
-import TodoHeader from './components/TodoHeader/TodoHeader'
 import {useSelector} from 'react-redux'
-import styles from './app.module.css'
+import TodoHeader from '@/components/TodoHeader/TodoHeader'
+import styles from '@/app.module.css'
 
 function App() {
   const theme = useSelector((state) => state.todo.themeColor)

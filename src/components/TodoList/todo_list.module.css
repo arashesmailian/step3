@@ -93,10 +93,10 @@
 .footer_conditions p{
     font-weight: 700;
 }
-.footr_conditions>p[status='true']{
+.footer_conditions>p[status='true']{
     color: var(--Bright-Blue);
 }
-.footr_conditions p:hover{
+.footer_conditions p:hover{
     color: var(--Very-Dark-Blue);
 }
 .drag_and_drop_description{

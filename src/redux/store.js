@@ -1,5 +1,4 @@
 import {configureStore} from '@reduxjs/toolkit'
-import todoReducer from './reducers/todo.reducer'
 import {combineReducers} from '@reduxjs/toolkit'
 import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2'
 import storage from 'redux-persist/lib/storage'
@@ -12,6 +11,7 @@ import {
   REGISTER,
   persistReducer,
 } from 'redux-persist'
+import todoReducer from '@/redux/reducers/todo.reducer'
 
 const persistConfig = {
   key: 'root',

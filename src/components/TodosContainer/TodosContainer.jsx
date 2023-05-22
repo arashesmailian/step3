@@ -1,6 +1,6 @@
-import TodoInput from '../TodoInput/TodoInput'
-import TodoList from '../TodoList/TodoList'
-import styles from './todos_container.module.css'
+import TodoInput from '@/components/TodoInput/TodoInput'
+import TodoList from '@/components/TodoList/TodoList'
+import styles from '@/components/TodosContainer/todos_container.module.css'
 
 const TodosContainer = () => {
   return (

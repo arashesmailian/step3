@@ -2,14 +2,11 @@
 /* eslint-disable react/no-unknown-property */
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
-import {
-  removeTodo,
-  completeTodo,
-  dragAndDropRefreshState,
-} from '../../redux/reducers/todo.reducer'
-import DeleteIcon from '../../assets/images/icon-cross.svg'
+import {removeTodo, completeTodo} from '../../redux/reducers/todo.reducer'
 import {useRef, useState, useEffect} from 'react'
-import styles from './todo_list.module.css'
+import useDragAndDrop from '@/hooks/useDragAndDrop'
+import DeleteIcon from '@/assets/images/icon-cross.svg'
+import styles from '@/components/TodoList/todo_list.module.css'
 
 const TodoList = () => {
   const dispatch = useDispatch()
@@ -20,24 +17,13 @@ const TodoList = () => {
   const [filterTodos, setFilterTodos] = useState('')
   const [condition, setCondition] = useState('All')
 
-  // *********drag and drop functionality*********
-  const dragStart = (e, position) => {
-    draggedItem.current = position
-  }
-  const dragEnter = (e, position) => {
-    dragOverItem.current = position
-  }
-  const dropDraggedItem = () => {
-    const reArrangedList = [...filterTodos]
-    const draggingITem = reArrangedList[draggedItem.current]
-    reArrangedList.splice(draggedItem.current, 1)
-    reArrangedList.splice(dragOverItem.current, 0, draggingITem)
-    setFilterTodos(reArrangedList)
-    dispatch(dragAndDropRefreshState(reArrangedList))
-    draggedItem.current = null
-    dragOverItem.current = null
-  }
-  //*********
+  //******* drag&drop hook *******
+  const {dragStart, dragEnter, dropingDraggedItem} = useDragAndDrop(
+    filterTodos,
+    setFilterTodos,
+    draggedItem,
+    dragOverItem
+  )
 
   const deleteTaskHandler = (task) => {
     dispatch(removeTodo(task))
@@ -72,9 +58,9 @@ const TodoList = () => {
                 <div
                   key={todo.id}
                   draggable={true}
-                  onDragStart={(e) => dragStart(e, index)}
-                  onDragEnter={(e) => dragEnter(e, index)}
-                  onDragEnd={dropDraggedItem}
+                  onDragStart={() => dragStart(index)}
+                  onDragEnter={() => dragEnter(index)}
+                  onDragEnd={dropingDraggedItem}
                 >
                   <li
                     className={styles.todo_item}
